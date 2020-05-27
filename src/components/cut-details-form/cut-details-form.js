@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Form from 'react-bootstrap/Form';
 import { InputFormGroup } from '../input-form-group/input-form-group';
 import {calculate} from '../calculators/calculate';
 import './cut-details-form.css'
+import { CutDetailsContext } from '../../contexts/cut-details-context';
 
 export const CutDetailsForm = () => {
-    const [details, setDetails] = useState({});
+    const {cutDetails, setCutDetails} = React.useContext(CutDetailsContext);
 
-    const handleBoardLength = React.useCallback((e) => handleOnChange(e, 'boardLength'));
-    const handleNumberOfCuts = React.useCallback((e) => handleOnChange(e, 'numberOfCuts'));
-    const handleBladeWidth = React.useCallback((e) => handleOnChange(e, 'bladeWidth'));
+    const handleBoardLength = event => handleOnChange(event, 'boardLength');
+    const handleNumberOfCuts = event => handleOnChange(event, 'numberOfCuts');
+    const handleBladeWidth = event => handleOnChange(event, 'bladeWidth');
 
-    const handleOnChange = (e, name) => {
-        setDetails({
-            ...details,
-            [name]: e.target.value
+    const handleOnChange = (event, name) => {
+        setCutDetails({
+            ...cutDetails,
+            [name]: event.target.value
         });
     };
 
-    const showCutDetails = details && details.boardLength && details.numberOfCuts && details.bladeWidth;
+    const showCutDetails = cutDetails.boardLength && cutDetails.numberOfCuts && cutDetails.bladeWidth;
 
     return (
         <React.Fragment>
@@ -40,7 +41,7 @@ export const CutDetailsForm = () => {
                     />
             </Form>
             <div data-testid={'results'} className={'results'}>
-                {showCutDetails && calculate(details)}
+                {showCutDetails && calculate(cutDetails)}
             </div>
         </React.Fragment>
     )
