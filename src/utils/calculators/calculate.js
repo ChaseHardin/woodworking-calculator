@@ -1,6 +1,6 @@
 export const calculate = ({boardLength, numberOfCuts, bladeWidth}) => {
-    const totalBladeWaste = numberOfCuts * bladeWidth;
-    const boardAfterBladeWaste = boardLength - totalBladeWaste;
+    const bladeWaste = numberOfCuts * bladeWidth;
+    const boardAfterBladeWaste = boardLength - bladeWaste;
 
     return boardAfterBladeWaste / numberOfCuts;
 }

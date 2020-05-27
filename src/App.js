@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CutDetailsForm } from './components/cut-details-form/cut-details-form';
+import { CutDetails } from './components/cut-details/cut-details';
 import Container from 'react-bootstrap/Container';
 import { TopNav } from './components/menu/top-nav';
 import { CutDetailsProvider } from './contexts/cut-details-context';
@@ -10,7 +10,7 @@ function App() {
     <CutDetailsProvider>
       <TopNav />
       <Container>
-        <CutDetailsForm />
+        <CutDetails />
       </Container>
     </CutDetailsProvider>
   );
