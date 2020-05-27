@@ -15,7 +15,7 @@ exports[`renders wrap application in container 1`] = `
         className="form-group"
       >
         <label
-          className="form-label"
+          className="form-label form-label"
           data-testid="Length of Board"
         >
           Length of Board
@@ -29,7 +29,7 @@ exports[`renders wrap application in container 1`] = `
         className="form-group"
       >
         <label
-          className="form-label"
+          className="form-label form-label"
           data-testid="Boards"
         >
           Boards
@@ -43,7 +43,7 @@ exports[`renders wrap application in container 1`] = `
         className="form-group"
       >
         <label
-          className="form-label"
+          className="form-label form-label"
           data-testid="Blade Width"
         >
           Blade Width
