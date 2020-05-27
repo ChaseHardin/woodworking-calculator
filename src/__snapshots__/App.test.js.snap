@@ -1,62 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders wrap application in container 1`] = `
-<div
-  className="container"
->
-  <form
-    className=""
-    data-testid="cut-details-form"
+Array [
+  <nav
+    className="navbar-styles navbar navbar-expand navbar-light bg-dark"
   >
-    <div
-      className="form-group"
+    <span
+      className="navbar-brand"
     >
-      <label
-        className="form-label form-label"
-        data-testid="Length of Board"
-      >
-        Length of Board
-      </label>
-      <input
-        className="form-control"
-        onChange={[Function]}
-        placeholder="Length of board before cutting"
-      />
-    </div>
-    <div
-      className="form-group"
-    >
-      <label
-        className="form-label form-label"
-        data-testid="Boards"
-      >
-        Boards
-      </label>
-      <input
-        className="form-control"
-        onChange={[Function]}
-        placeholder="Number of boards after cutting"
-      />
-    </div>
-    <div
-      className="form-group"
-    >
-      <label
-        className="form-label form-label"
-        data-testid="Blade Width"
-      >
-        Blade Width
-      </label>
-      <input
-        className="form-control"
-        onChange={[Function]}
-        placeholder="Width of blade"
-      />
-    </div>
-  </form>
+      Woodworking Calculator
+    </span>
+  </nav>,
   <div
-    className="results"
-    data-testid="results"
-  />
-</div>
+    className="container"
+  >
+    <form
+      className=""
+      data-testid="cut-details-form"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label form-label"
+          data-testid="Length of Board"
+        >
+          Length of Board
+        </label>
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Length of board before cutting"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label form-label"
+          data-testid="Boards"
+        >
+          Boards
+        </label>
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Number of boards after cutting"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label form-label"
+          data-testid="Blade Width"
+        >
+          Blade Width
+        </label>
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Width of blade"
+        />
+      </div>
+    </form>
+    <div
+      className="results"
+      data-testid="results"
+    />
+  </div>,
+]
 `;
