@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { InputFormGroup } from '../input-form-group/input-form-group';
-import './cut-details-form.css';
 import {calculate} from '../calculators/calculate';
+import './cut-details-form.css'
 
 export const CutDetailsForm = () => {
     const [details, setDetails] = useState({});
@@ -22,9 +22,6 @@ export const CutDetailsForm = () => {
 
     return (
         <React.Fragment>
-            <div data-testid={'results'}>
-                {showCutDetails && <span>{calculate(details)}</span>}
-            </div>
             <Form data-testid={'cut-details-form'}>
                 <InputFormGroup 
                     label='Length of Board' 
@@ -42,6 +39,9 @@ export const CutDetailsForm = () => {
                     onChange={handleBladeWidth}
                     />
             </Form>
+            <div data-testid={'results'} className={'results'}>
+                {showCutDetails && calculate(details)}
+            </div>
         </React.Fragment>
     )
 }
