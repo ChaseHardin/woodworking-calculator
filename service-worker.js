@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/woodworking-calculator/precache-manifest.de79b4a14442783a2888d2fbdb89e6c4.js"
+  "/woodworking-calculator/precache-manifest.0d55e426dcf62c07b4e5d4d0fc6cbf8a.js"
 );
 
 self.addEventListener('message', (event) => {
