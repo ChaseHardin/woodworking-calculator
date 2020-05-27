@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9656e73c9ad7b0eed3abe9002680a84b",
+    "revision": "947413e2df22357aa68b16e63f6730f4",
     "url": "/woodworking-calculator/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/woodworking-calculator/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "b4decf3bf8716dee1f56",
-    "url": "/woodworking-calculator/static/css/main.f4bc1fdf.chunk.css"
+    "revision": "721ebfb3edccedeba9d1",
+    "url": "/woodworking-calculator/static/css/main.dd3d794e.chunk.css"
   },
   {
     "revision": "ca15c13288db6b5a158a",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/woodworking-calculator/static/js/2.9e4688d2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b4decf3bf8716dee1f56",
-    "url": "/woodworking-calculator/static/js/main.cf6fb75c.chunk.js"
+    "revision": "721ebfb3edccedeba9d1",
+    "url": "/woodworking-calculator/static/js/main.859d67ce.chunk.js"
   },
   {
     "revision": "053ce2d5c6597497654a",
