@@ -7,6 +7,9 @@ exports[`renders wrap application in container 1`] = `
   <div
     className="App"
   >
+    <div
+      data-testid="results"
+    />
     <form
       className=""
       data-testid="cut-details-form"
@@ -22,6 +25,7 @@ exports[`renders wrap application in container 1`] = `
         </label>
         <input
           className="form-control"
+          onChange={[Function]}
           placeholder="Length of board before cutting"
         />
       </div>
