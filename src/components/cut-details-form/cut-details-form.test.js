@@ -4,9 +4,18 @@ import App from '../../App';
 
 test('allows a user to enter the cut details', () => {
     const component = render(<App />);
-    const label = 'Board Length';
 
     expect(component.getByTestId('cut-details-form')).toBeTruthy();
-    expect(component.getByTestId(label)).toHaveTextContent(label);
-    expect(component.getByPlaceholderText(label));
+
+    const boardLengthLabel = 'Length of Board';
+    expect(component.getByTestId(boardLengthLabel)).toHaveTextContent(boardLengthLabel);
+    expect(component.getByPlaceholderText('Length of board before cutting'));
+
+    const numberOfCutsLabel = 'Boards'
+    expect(component.getByTestId(numberOfCutsLabel)).toHaveTextContent(numberOfCutsLabel);
+    expect(component.getByPlaceholderText('Number of boards after cutting'));
+
+    const bladeWidthLabel = 'Blade Width';
+    expect(component.getByTestId(bladeWidthLabel)).toHaveTextContent(bladeWidthLabel);
+    expect(component.getByPlaceholderText('Width of blade'));
 });

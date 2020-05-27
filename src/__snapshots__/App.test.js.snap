@@ -16,13 +16,41 @@ exports[`renders wrap application in container 1`] = `
       >
         <label
           className="form-label"
-          data-testid="Board Length"
+          data-testid="Length of Board"
         >
-          Board Length
+          Length of Board
         </label>
         <input
           className="form-control"
-          placeholder="Board Length"
+          placeholder="Length of board before cutting"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          data-testid="Boards"
+        >
+          Boards
+        </label>
+        <input
+          className="form-control"
+          placeholder="Number of boards after cutting"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          data-testid="Blade Width"
+        >
+          Blade Width
+        </label>
+        <input
+          className="form-control"
+          placeholder="Width of blade"
         />
       </div>
     </form>
