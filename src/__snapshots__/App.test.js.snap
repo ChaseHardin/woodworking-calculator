@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders wrap application in container 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="App"
+  >
+    <form
+      className=""
+      data-testid="cut-details-form"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="form-label"
+          data-testid="Board Length"
+        >
+          Board Length
+        </label>
+        <input
+          className="form-control"
+          placeholder="Board Length"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;
