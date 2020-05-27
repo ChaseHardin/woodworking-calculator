@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders snapshot of form group 1`] = `
+<div
+  className="form-group"
+>
+  <input
+    className="form-control"
+  />
+</div>
+`;
