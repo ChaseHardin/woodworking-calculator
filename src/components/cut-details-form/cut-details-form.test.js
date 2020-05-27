@@ -25,13 +25,20 @@ test('allows a user to enter the cut details', () => {
 test('should render the cut details', () => {
     const {getByTestId, getByPlaceholderText} = setup();
     
-    const input = getByPlaceholderText('Length of board before cutting');
+    const boardLengthInput = getByPlaceholderText('Length of board before cutting');
+    const numberOfCutsInput = getByPlaceholderText('Number of boards after cutting');
+    const bladeWidthInput = getByPlaceholderText('Width of blade');
 
-    fireEvent.change(input, { target: { value: '26' } });
-    
-    expect(input.value).toBe('26');
-    expect(getByTestId('results')).toHaveTextContent('26');
+    triggerInput(boardLengthInput, '20.18');
+    triggerInput(numberOfCutsInput, '2');
+    triggerInput(bladeWidthInput, '.09')
+
+    expect(getByTestId('results')).toHaveTextContent('10');
 });
+
+const triggerInput = (input, value) => {
+    fireEvent.change(input, { target: { value } });
+};
 
 const setup = () => {
     const utils = render(<App />);
