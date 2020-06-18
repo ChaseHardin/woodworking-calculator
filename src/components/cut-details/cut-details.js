@@ -4,6 +4,7 @@ import { InputFormGroup } from '../input-form-group/input-form-group';
 import './cut-details.css'
 import { CutDetailsContext } from '../../contexts/cut-details-context';
 import { Results } from '../results/results';
+import Dropdown from '../dropdown/dropdown';
 
 export const CutDetails = () => {
     const { cutDetails, setCutDetails } = React.useContext(CutDetailsContext);
@@ -22,6 +23,10 @@ export const CutDetails = () => {
     return (
         <React.Fragment>
             <Form data-testid={'cut-details-form'}>
+                <Dropdown 
+                    label={'Inches'}
+                    options={['1/2', '3/4']}
+                />
                 <InputFormGroup
                     label='Length of Board'
                     placeholder='Length of board before cutting'
