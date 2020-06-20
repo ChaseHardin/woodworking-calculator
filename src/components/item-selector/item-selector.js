@@ -3,13 +3,14 @@ import { MDBInputGroup } from 'mdbreact';
 import { CutDetailsContext } from '../../contexts/cut-details-context';
 
 export const ItemSelector = props => {
-    const { setCutDetails } = React.useContext(CutDetailsContext);
+    const { cutDetails, setCutDetails } = React.useContext(CutDetailsContext);
 
     const handleChange = (event) => {
         setCutDetails({
+            ...cutDetails,
             [props.type]: {
                 ...props.item,
-                value: parseInt(event.target.value)
+                [props.measurement]: parseInt(event.target.value)
             }
         });
     }
@@ -26,7 +27,7 @@ export const ItemSelector = props => {
             append={props.measurement}
             inputs={
                 <select
-                    data-testid={'item-selector-input'}
+                    data-testid={`selector-input-${props.type}-${props.measurement}`}
                     className="browser-default custom-select"
                     onChange={handleChange}>
                     <option>{props.optionLabel}</option>

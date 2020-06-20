@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import './cut-details.css'
 import { CutDetailsContext } from '../../contexts/cut-details-context';
 import { ItemSelector } from '../item-selector/item-selector';
-import { feet } from '../../utils/feet';
+import { feet, inches } from '../../utils/measurements';
 import { ResultsTable } from '../results/results-table';
 
 export const CutDetails = () => {
@@ -25,7 +25,15 @@ export const CutDetails = () => {
                 optionLabel={'Select feet'}
             />
 
-            {cutDetails.board.value && <ResultsTable cutDetails={cutDetails} />}
+            <ItemSelector
+                measurement={'in'}
+                type={'board'}
+                item={cutDetails.board}
+                options={inches}
+                optionLabel={'Select inches'}
+            />
+
+            {cutDetails.board.value.length > 0 && <ResultsTable cutDetails={cutDetails} />}
         </Form>
     )
 };

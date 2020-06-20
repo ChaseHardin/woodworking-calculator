@@ -3,9 +3,9 @@ import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 
 export const ResultsTable = props => {
     const renderTableDetails = () => {
-        return Object.values(props.cutDetails).map((value) => {
+        return Object.values(props.cutDetails).map((value, index) => {
             return (
-                <tr key={value}>
+                <tr key={index}>
                     <td>{value.label}</td>
                     <td>{value.value}</td>
                 </tr>
