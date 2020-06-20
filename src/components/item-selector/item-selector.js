@@ -7,7 +7,10 @@ export const ItemSelector = props => {
 
     const handleChange = (event) => {
         setCutDetails({
-            [props.detailType]: parseInt(event.target.value)
+            [props.type]: {
+                label: props.itemDetails.label,
+                value: parseInt(event.target.value)
+            }
         });
     }
 
@@ -20,7 +23,7 @@ export const ItemSelector = props => {
     return (
         <MDBInputGroup
             containerClassName="mb-3"
-            append={props.measurementType}
+            append={props.measurement}
             inputs={
                 <select
                     data-testid={'item-selector-input'}

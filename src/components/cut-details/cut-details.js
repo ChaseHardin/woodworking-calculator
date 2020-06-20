@@ -4,6 +4,7 @@ import './cut-details.css'
 import { CutDetailsContext } from '../../contexts/cut-details-context';
 import { ItemSelector } from '../item-selector/item-selector';
 import { feet } from '../../utils/feet';
+import { ResultsTable } from '../results/results-table';
 
 export const CutDetails = () => {
     const { cutDetails } = React.useContext(CutDetailsContext);
@@ -17,14 +18,12 @@ export const CutDetails = () => {
             <h4 style={styleLabel}>What is the length of the board?</h4>
 
             <ItemSelector
-                measurementType={'ft'}
-                detailType={'boardLengthFt'}
+                measurement={'ft'}
+                type={'board'}
+                itemDetails={cutDetails.board}
                 options={feet}
             />
-
-            <div data-testid={'cut-results'}>
-                {cutDetails.boardLengthFt}
-            </div>
+            {cutDetails.board.value && <ResultsTable cutDetails={cutDetails} />}
         </Form>
     )
 };

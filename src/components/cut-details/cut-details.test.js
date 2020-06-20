@@ -16,5 +16,12 @@ test('allows a user to enter cut details', async () => {
         target: { value: expectedBoardLengthFt }
     });
 
+    expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
     expect(getByTestId('cut-results')).toHaveTextContent(expectedBoardLengthFt);
+});
+
+test('should not show results table until a user provides cut details', () => {
+    const { queryByTestId} = render(<App />);
+
+    expect(queryByTestId('cut-results')).toBeNull();
 });
