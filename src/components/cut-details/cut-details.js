@@ -41,7 +41,7 @@ export const CutDetails = () => {
                 optionLabel={'Select fraction'}
             />
 
-            {cutDetails.board.value.length > 0 && <ResultsTable cutDetails={cutDetails} />}
+            {cutDetails.board.value && <ResultsTable cutDetails={cutDetails} />}
         </Form>
     )
 };
