@@ -10,6 +10,7 @@ test('allows a user to enter cut details', async () => {
     expect(getByTestId('cut-details-form')).toBeTruthy();
     expect(getByText('What is the length of the board?'));
     expect(getByText('ft'));
+    expect(getByText('Select feet'));
 
     const expectedBoardLengthFt = '5';
     await fireEvent.change(getByTestId('item-selector-input'), {

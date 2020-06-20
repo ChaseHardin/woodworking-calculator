@@ -20,9 +20,11 @@ export const CutDetails = () => {
             <ItemSelector
                 measurement={'ft'}
                 type={'board'}
-                itemDetails={cutDetails.board}
+                item={cutDetails.board}
                 options={feet}
+                optionLabel={'Select feet'}
             />
+
             {cutDetails.board.value && <ResultsTable cutDetails={cutDetails} />}
         </Form>
     )

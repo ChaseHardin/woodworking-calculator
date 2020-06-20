@@ -8,7 +8,7 @@ export const ItemSelector = props => {
     const handleChange = (event) => {
         setCutDetails({
             [props.type]: {
-                label: props.itemDetails.label,
+                ...props.item,
                 value: parseInt(event.target.value)
             }
         });
@@ -29,7 +29,7 @@ export const ItemSelector = props => {
                     data-testid={'item-selector-input'}
                     className="browser-default custom-select"
                     onChange={handleChange}>
-                    <option>Select feet</option>
+                    <option>{props.optionLabel}</option>
                     {renderOptions()}
                 </select>
             }
