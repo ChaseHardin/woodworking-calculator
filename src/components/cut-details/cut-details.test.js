@@ -12,7 +12,7 @@ test('allows a user to enter cut details', async () => {
     expect(getByText('What is the length of the board?'));
     expect(getByText('ft'));
     expect(getByText('Select feet'));
-    
+
     expect(getByText('in'));
     expect(getByText('Select inches'));
 
@@ -22,8 +22,43 @@ test('allows a user to enter cut details', async () => {
     const boardLengthIn = makeNumber(0, 12);
     changeInput(getByTestId('selector-input-board-in'), boardLengthIn);
 
+    const boardLengthFr = '1/2';
+    changeInput(getByTestId('selector-input-board-fr'), boardLengthFr);
+
     expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
-    expect(getByTestId('cut-results')).toHaveTextContent(`${boardLengthFt}' ${boardLengthIn}"`);
+    expect(getByTestId('cut-results')).toHaveTextContent(
+        `${boardLengthFt}' ${boardLengthIn} 1/2"`
+    );
+});
+
+test('allow a user to see results when board is only feet long', () => {
+    const { getByTestId } = render(<App />);
+
+    const boardLengthFt = makeNumber(0, 20);
+    changeInput(getByTestId('selector-input-board-ft'), boardLengthFt);
+
+    expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
+    expect(getByTestId('cut-results')).toHaveTextContent(`${boardLengthFt}'`);
+});
+
+test('allow a user to see results when board is only inches long', () => {
+    const { getByTestId } = render(<App />);
+
+    const boardLengthIn = makeNumber(0, 12);
+    changeInput(getByTestId('selector-input-board-in'), boardLengthIn);
+
+    expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
+    expect(getByTestId('cut-results')).toHaveTextContent(`${boardLengthIn}"`);
+});
+
+test('allow a user to see results when board is only fractions long', () => {
+    const { getByTestId } = render(<App />);
+
+    const boardLengthFr = '1/2';
+    changeInput(getByTestId('selector-input-board-fr'), boardLengthFr);
+
+    expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
+    expect(getByTestId('cut-results')).toHaveTextContent(`${boardLengthFr}"`);
 });
 
 test('should not show results table until a user provides cut details', () => {

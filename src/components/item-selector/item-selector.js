@@ -10,7 +10,7 @@ export const ItemSelector = props => {
             ...cutDetails,
             [props.type]: {
                 ...props.item,
-                [props.measurement]: parseInt(event.target.value)
+                [props.measurement]: event.target.value
             }
         });
     }
