@@ -1,13 +1,14 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import './top-nav.css';
+import { MDBNav } from 'mdbreact';
+
+const menuStyles = {
+  color: 'white'
+};
 
 export const TopNav = () => {
   return (
-    <Navbar bg='dark' className='navbar-styles'>
-      <Navbar.Brand>
-        Woodworking Calculator
-      </Navbar.Brand>
-    </Navbar>
+    <MDBNav color='aqua-gradient' className='font-weight-bold py-4 px-2 mb-5' style={menuStyles}>
+      Woodworking Calculator
+    </MDBNav>
   )
 }

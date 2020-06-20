@@ -1,49 +1,30 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { InputFormGroup } from '../input-form-group/input-form-group';
 import './cut-details.css'
 import { CutDetailsContext } from '../../contexts/cut-details-context';
-import { Results } from '../results/results';
-import Dropdown from '../dropdown/dropdown';
+import { ItemSelector } from '../item-selector/item-selector';
+import { feet } from '../../utils/feet';
 
 export const CutDetails = () => {
-    const { cutDetails, setCutDetails } = React.useContext(CutDetailsContext);
+    const { cutDetails } = React.useContext(CutDetailsContext);
 
-    const handleBoardLength = event => handleOnChange(event, 'boardLength');
-    const handleNumberOfCuts = event => handleOnChange(event, 'numberOfCuts');
-    const handleBladeWidth = event => handleOnChange(event, 'bladeWidth');
-
-    const handleOnChange = (event, name) => {
-        setCutDetails({
-            ...cutDetails,
-            [name]: event.target.value
-        });
+    const styleLabel = {
+        marginBottom: '2rem'
     };
 
     return (
-        <React.Fragment>
-            <Form data-testid={'cut-details-form'}>
-                <Dropdown 
-                    label={'Inches'}
-                    options={['1/2', '3/4']}
-                />
-                <InputFormGroup
-                    label='Length of Board'
-                    placeholder='Length of board before cutting'
-                    onChange={handleBoardLength}
-                />
-                <InputFormGroup
-                    label='Boards'
-                    placeholder='Number of boards after cutting'
-                    onChange={handleNumberOfCuts}
-                />
-                <InputFormGroup
-                    label='Blade Width'
-                    placeholder='Width of blade'
-                    onChange={handleBladeWidth}
-                />
-            </Form>
-            <Results />
-        </React.Fragment>
+        <Form data-testid={'cut-details-form'}>
+            <h4 style={styleLabel}>What is the length of the board?</h4>
+
+            <ItemSelector
+                measurementType={'ft'}
+                detailType={'boardLengthFt'}
+                options={feet}
+            />
+
+            <div data-testid={'cut-results'}>
+                {cutDetails.boardLengthFt}
+            </div>
+        </Form>
     )
-}
+};
