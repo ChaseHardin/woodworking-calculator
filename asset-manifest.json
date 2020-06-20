@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/woodworking-calculator/static/css/main.d485732f.chunk.css",
-    "main.js": "/woodworking-calculator/static/js/main.3c291504.chunk.js",
-    "main.js.map": "/woodworking-calculator/static/js/main.3c291504.chunk.js.map",
+    "main.css": "/woodworking-calculator/static/css/main.8f769cb7.chunk.css",
+    "main.js": "/woodworking-calculator/static/js/main.2b51fd57.chunk.js",
+    "main.js.map": "/woodworking-calculator/static/js/main.2b51fd57.chunk.js.map",
     "runtime-main.js": "/woodworking-calculator/static/js/runtime-main.91aa8c58.js",
     "runtime-main.js.map": "/woodworking-calculator/static/js/runtime-main.91aa8c58.js.map",
-    "static/css/2.af3c1da9.chunk.css": "/woodworking-calculator/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.7695f033.chunk.js": "/woodworking-calculator/static/js/2.7695f033.chunk.js",
-    "static/js/2.7695f033.chunk.js.map": "/woodworking-calculator/static/js/2.7695f033.chunk.js.map",
+    "static/css/2.6e978833.chunk.css": "/woodworking-calculator/static/css/2.6e978833.chunk.css",
+    "static/js/2.747bcc55.chunk.js": "/woodworking-calculator/static/js/2.747bcc55.chunk.js",
+    "static/js/2.747bcc55.chunk.js.map": "/woodworking-calculator/static/js/2.747bcc55.chunk.js.map",
     "index.html": "/woodworking-calculator/index.html",
-    "precache-manifest.21aac48d224a3610d3d49d4cc6177b3c.js": "/woodworking-calculator/precache-manifest.21aac48d224a3610d3d49d4cc6177b3c.js",
+    "precache-manifest.6140c921fc3624d7ab03e3e68c7f903f.js": "/woodworking-calculator/precache-manifest.6140c921fc3624d7ab03e3e68c7f903f.js",
     "service-worker.js": "/woodworking-calculator/service-worker.js",
-    "static/css/2.af3c1da9.chunk.css.map": "/woodworking-calculator/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.d485732f.chunk.css.map": "/woodworking-calculator/static/css/main.d485732f.chunk.css.map",
-    "static/js/2.7695f033.chunk.js.LICENSE.txt": "/woodworking-calculator/static/js/2.7695f033.chunk.js.LICENSE.txt"
+    "static/css/2.6e978833.chunk.css.map": "/woodworking-calculator/static/css/2.6e978833.chunk.css.map",
+    "static/css/main.8f769cb7.chunk.css.map": "/woodworking-calculator/static/css/main.8f769cb7.chunk.css.map",
+    "static/js/2.747bcc55.chunk.js.LICENSE.txt": "/woodworking-calculator/static/js/2.747bcc55.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/woodworking-calculator/static/media/arrow_right.8ef6a08c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.91aa8c58.js",
-    "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.7695f033.chunk.js",
-    "static/css/main.d485732f.chunk.css",
-    "static/js/main.3c291504.chunk.js"
+    "static/css/2.6e978833.chunk.css",
+    "static/js/2.747bcc55.chunk.js",
+    "static/css/main.8f769cb7.chunk.css",
+    "static/js/main.2b51fd57.chunk.js"
   ]
 }
