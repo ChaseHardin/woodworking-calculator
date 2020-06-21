@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/woodworking-calculator/static/css/main.8f769cb7.chunk.css",
-    "main.js": "/woodworking-calculator/static/js/main.b5311b93.chunk.js",
-    "main.js.map": "/woodworking-calculator/static/js/main.b5311b93.chunk.js.map",
+    "main.js": "/woodworking-calculator/static/js/main.9dd223dc.chunk.js",
+    "main.js.map": "/woodworking-calculator/static/js/main.9dd223dc.chunk.js.map",
     "runtime-main.js": "/woodworking-calculator/static/js/runtime-main.91aa8c58.js",
     "runtime-main.js.map": "/woodworking-calculator/static/js/runtime-main.91aa8c58.js.map",
     "static/css/2.07d86cf9.chunk.css": "/woodworking-calculator/static/css/2.07d86cf9.chunk.css",
-    "static/js/2.8d799182.chunk.js": "/woodworking-calculator/static/js/2.8d799182.chunk.js",
-    "static/js/2.8d799182.chunk.js.map": "/woodworking-calculator/static/js/2.8d799182.chunk.js.map",
+    "static/js/2.bfdfbd17.chunk.js": "/woodworking-calculator/static/js/2.bfdfbd17.chunk.js",
+    "static/js/2.bfdfbd17.chunk.js.map": "/woodworking-calculator/static/js/2.bfdfbd17.chunk.js.map",
     "index.html": "/woodworking-calculator/index.html",
-    "precache-manifest.d2a51d88f70a408da640f273793b1d82.js": "/woodworking-calculator/precache-manifest.d2a51d88f70a408da640f273793b1d82.js",
+    "precache-manifest.b5e0e2ea658642f3770bd144ad543f29.js": "/woodworking-calculator/precache-manifest.b5e0e2ea658642f3770bd144ad543f29.js",
     "service-worker.js": "/woodworking-calculator/service-worker.js",
     "static/css/2.07d86cf9.chunk.css.map": "/woodworking-calculator/static/css/2.07d86cf9.chunk.css.map",
     "static/css/main.8f769cb7.chunk.css.map": "/woodworking-calculator/static/css/main.8f769cb7.chunk.css.map",
-    "static/js/2.8d799182.chunk.js.LICENSE.txt": "/woodworking-calculator/static/js/2.8d799182.chunk.js.LICENSE.txt",
+    "static/js/2.bfdfbd17.chunk.js.LICENSE.txt": "/woodworking-calculator/static/js/2.bfdfbd17.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/woodworking-calculator/static/media/arrow_right.8ef6a08c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.91aa8c58.js",
     "static/css/2.07d86cf9.chunk.css",
-    "static/js/2.8d799182.chunk.js",
+    "static/js/2.bfdfbd17.chunk.js",
     "static/css/main.8f769cb7.chunk.css",
-    "static/js/main.b5311b93.chunk.js"
+    "static/js/main.9dd223dc.chunk.js"
   ]
 }
