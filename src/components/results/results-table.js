@@ -7,7 +7,7 @@ export const ResultsTable = props => {
             return (
                 <tr key={index}>
                     <td>{value.label}</td>
-                    <td>{value.value}</td>
+                    <td>{value.value(value.ft, value.in, value.fr)}</td>
                 </tr>
             );
         });

@@ -16,6 +16,9 @@ test('allows a user to enter cut details', async () => {
     expect(getByText('in'));
     expect(getByText('Select inches'));
 
+    expect(getByText('fr'));
+    expect(getByText('Select fraction of an inch'))
+
     const boardLengthFt = makeNumber(0, 20);
     changeInput(getByTestId('selector-input-board-ft'), boardLengthFt);
 

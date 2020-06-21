@@ -12,6 +12,8 @@ export const CutDetails = () => {
     const styleLabel = {
         marginBottom: '2rem'
     };
+    
+    const showResults = cutDetails.board.ft || cutDetails.board.in || cutDetails.board.fr;
 
     return (
         <Form data-testid={'cut-details-form'}>
@@ -38,10 +40,10 @@ export const CutDetails = () => {
                 type={'board'}
                 item={cutDetails.board}
                 options={fractions}
-                optionLabel={'Select fraction'}
+                optionLabel={'Select fraction of an inch'}
             />
 
-            {cutDetails.board.value && <ResultsTable cutDetails={cutDetails} />}
+            {showResults && <ResultsTable cutDetails={cutDetails} />}
         </Form>
     )
 };
