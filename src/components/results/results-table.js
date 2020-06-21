@@ -3,11 +3,20 @@ import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 
 export const ResultsTable = props => {
     const renderTableDetails = () => {
-        return Object.values(props.cutDetails).map((value, index) => {
+        return Object.entries(props.cutDetails).map(([key, value]) => {
+            if (key === 'board') {
+                return (
+                    <tr key={key}>
+                        <td>{value.label}</td>
+                        <td>{value.value(value.ft, value.in, value.fr)}</td>
+                    </tr>
+                );
+            }
+
             return (
-                <tr key={index}>
+                <tr key={key}>
                     <td>{value.label}</td>
-                    <td>{value.value(value.ft, value.in, value.fr)}</td>
+                    <td>{value.value}</td>
                 </tr>
             );
         });

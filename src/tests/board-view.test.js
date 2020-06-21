@@ -38,7 +38,6 @@ test('allows a user to submit board length', async () => {
     );
 });
 
-
 test('allow a user to see results when board is only feet long', () => {
     const { getByTestId } = render(<App />);
 

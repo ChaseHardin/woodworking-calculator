@@ -5,14 +5,11 @@ import { feet, inches, fractions } from '../../utils/measurements';
 import { MDBBtn } from 'mdbreact';
 import { CutDetailsContext } from '../../contexts/cut-details-context';
 import {ViewContext} from '../../contexts/view-context';
+import Styles from '../../styles';
 
 export const BoardView = () => {
     const { cutDetails } = React.useContext(CutDetailsContext);
     const {setView} = React.useContext(ViewContext);
-
-    const styleLabel = {
-        marginBottom: '2rem'
-    };
 
     const handleNext = () => setView({
         board: false,
@@ -21,7 +18,7 @@ export const BoardView = () => {
     
     return (
         <Form data-testid={'cut-details-form'}>
-            <h4 style={styleLabel}>What is the length of the board?</h4>
+            <h4 style={Styles.label}>What is the length of the board?</h4>
 
             <ItemSelector
                 measurement={'ft'}
