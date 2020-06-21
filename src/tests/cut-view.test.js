@@ -23,3 +23,14 @@ test('allows a user to fill provide blade width and desired board count', () => 
     expect(getByTestId('cut-results')).toHaveTextContent('Blade Width');
     expect(getByTestId('cut-results')).toHaveTextContent(`${bladeWidth}`);
 });
+
+test('allows a user to go back to board length view', () => {
+    const { getByText } = render(<App />);
+    
+    fireEvent.click(getByText('Next'));
+    expect(getByText('How wide is your saw blade?'));
+
+    fireEvent.click(getByText('Back'));
+
+    expect(getByText('What is the length of the board?'));
+});
