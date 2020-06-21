@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import App from '../App';
 import chance from '../../test-utils/chance-wrapper';
+import TestHelpers from '../../test-utils/helpers';
 
 afterEach(cleanup);
 
@@ -23,14 +24,14 @@ test('should make form with correct text', () => {
 test('allows a user to submit board length', async () => {
     const { getByTestId, queryByTestId, getByText } = render(<App />);
 
-    const boardLengthFt = makeNumber(0, 20);
-    changeInput(getByTestId('selector-input-board-ft'), boardLengthFt);
+    const boardLengthFt = TestHelpers.makeNumber(0, 20);
+    TestHelpers.changeInput(getByTestId('selector-input-board-ft'), boardLengthFt);
 
-    const boardLengthIn = makeNumber(0, 12);
-    changeInput(getByTestId('selector-input-board-in'), boardLengthIn);
+    const boardLengthIn = TestHelpers.makeNumber(0, 12);
+    TestHelpers.changeInput(getByTestId('selector-input-board-in'), boardLengthIn);
 
     const boardLengthFr = '1/2';
-    changeInput(getByTestId('selector-input-board-fr'), boardLengthFr);
+    TestHelpers.changeInput(getByTestId('selector-input-board-fr'), boardLengthFr);
 
     expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
     expect(getByTestId('cut-results')).toHaveTextContent(
@@ -42,8 +43,8 @@ test('allows a user to submit board length', async () => {
 test('allow a user to see results when board is only feet long', () => {
     const { getByTestId } = render(<App />);
 
-    const boardLengthFt = makeNumber(0, 20);
-    changeInput(getByTestId('selector-input-board-ft'), boardLengthFt);
+    const boardLengthFt = TestHelpers.makeNumber(0, 20);
+    TestHelpers.changeInput(getByTestId('selector-input-board-ft'), boardLengthFt);
 
     expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
     expect(getByTestId('cut-results')).toHaveTextContent(`${boardLengthFt}'`);
@@ -52,8 +53,8 @@ test('allow a user to see results when board is only feet long', () => {
 test('allow a user to see results when board is only inches long', () => {
     const { getByTestId } = render(<App />);
 
-    const boardLengthIn = makeNumber(0, 12);
-    changeInput(getByTestId('selector-input-board-in'), boardLengthIn);
+    const boardLengthIn = TestHelpers.makeNumber(0, 12);
+    TestHelpers.changeInput(getByTestId('selector-input-board-in'), boardLengthIn);
 
     expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
     expect(getByTestId('cut-results')).toHaveTextContent(`${boardLengthIn}"`);
@@ -63,11 +64,8 @@ test('allow a user to see results when board is only fractions long', () => {
     const { getByTestId } = render(<App />);
 
     const boardLengthFr = '1/2';
-    changeInput(getByTestId('selector-input-board-fr'), boardLengthFr);
+    TestHelpers.changeInput(getByTestId('selector-input-board-fr'), boardLengthFr);
 
     expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
     expect(getByTestId('cut-results')).toHaveTextContent(`${boardLengthFr}"`);
 });
-
-const makeNumber = (min, max) => chance.natural({ min, max });
-const changeInput = (input, value) => fireEvent.change(input, { target: { value } });
