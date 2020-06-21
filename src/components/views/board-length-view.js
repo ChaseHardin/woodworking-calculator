@@ -43,8 +43,9 @@ export const BoardLengthView = () => {
                 options={fractions}
                 optionLabel={'Select fraction of an inch'}
             />
-
-            <MDBBtn onClick={handleNext}>Next</MDBBtn>
+            <div className={'text-center'}>
+                <MDBBtn onClick={handleNext}>Next</MDBBtn>
+            </div>
         </Form>
     )
 };
