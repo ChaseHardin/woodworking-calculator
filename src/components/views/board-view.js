@@ -6,7 +6,7 @@ import { MDBBtn } from 'mdbreact';
 import { CutDetailsContext } from '../../contexts/cut-details-context';
 import {ViewContext} from '../../contexts/view-context';
 
-export const BoardLengthView = () => {
+export const BoardView = () => {
     const { cutDetails } = React.useContext(CutDetailsContext);
     const {setView} = React.useContext(ViewContext);
 
@@ -14,7 +14,10 @@ export const BoardLengthView = () => {
         marginBottom: '2rem'
     };
 
-    const handleNext = () => setView({board: false});
+    const handleNext = () => setView({
+        board: false,
+        cut: true
+    });
     
     return (
         <Form data-testid={'cut-details-form'}>

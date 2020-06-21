@@ -10,8 +10,10 @@ test('should not show results table until a user provides cut details', () => {
 });
 
 test('allow a user to move foward in cut details when clicking Next', () => {
-    const { queryByTestId, getByText } = render(<App />);
-
+    const { queryByTestId, getByText, queryByText } = render(<App />);
+    
+    expect(queryByText('How wide is your saw blade?')).toBeNull();
+    
     const boardLengthFt = TestHelpers.makeNumber(0, 20);
     TestHelpers.changeInput(queryByTestId('selector-input-board-ft'), boardLengthFt);
     
@@ -19,5 +21,5 @@ test('allow a user to move foward in cut details when clicking Next', () => {
 
     expect(queryByTestId('cut-details-form')).toBeNull();
     expect(queryByTestId('cut-results')).toBeTruthy();
+    expect(queryByText('How wide is your saw blade?')).toBeTruthy();
 });
-

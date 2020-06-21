@@ -3,7 +3,8 @@ import './cut-details.css'
 import { CutDetailsContext } from '../../contexts/cut-details-context';
 import {ViewContext} from '../../contexts/view-context';
 import { ResultsTable } from '../results/results-table';
-import { BoardLengthView } from '../views/board-length-view';
+import { BoardView } from '../views/board-view';
+import {CutView} from '../views/cut-view';
 
 export const CutDetails = () => {
     const { cutDetails } = React.useContext(CutDetailsContext);
@@ -13,7 +14,8 @@ export const CutDetails = () => {
 
     return (
         <div>
-            {view.board && <BoardLengthView />}
+            {view.board && <BoardView />}
+            {view.cut && <CutView/>}
             {showResults && <ResultsTable cutDetails={cutDetails} />}
         </div>
     )

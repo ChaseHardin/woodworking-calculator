@@ -1,7 +1,6 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import App from '../App';
-import chance from '../../test-utils/chance-wrapper';
 import TestHelpers from '../../test-utils/helpers';
 
 afterEach(cleanup);
@@ -22,7 +21,7 @@ test('should make form with correct text', () => {
 });
 
 test('allows a user to submit board length', async () => {
-    const { getByTestId, queryByTestId, getByText } = render(<App />);
+    const { getByTestId } = render(<App />);
 
     const boardLengthFt = TestHelpers.makeNumber(0, 20);
     TestHelpers.changeInput(getByTestId('selector-input-board-ft'), boardLengthFt);
