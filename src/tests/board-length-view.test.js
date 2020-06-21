@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
-import App from '../../App';
-import chance from '../../../test-utils/chance-wrapper';
+import App from '../App';
+import chance from '../../test-utils/chance-wrapper';
 
 afterEach(cleanup);
 
@@ -36,12 +36,8 @@ test('allows a user to submit board length', async () => {
     expect(getByTestId('cut-results')).toHaveTextContent(
         `${boardLengthFt}' ${boardLengthIn} 1/2"`
     );
-    
-    fireEvent.click(getByText('Next'));
-
-    expect(queryByTestId('cut-details-form')).toBeNull();
-    expect(queryByTestId('cut-results')).toBeTruthy();
 });
+
 
 test('allow a user to see results when board is only feet long', () => {
     const { getByTestId } = render(<App />);
@@ -71,12 +67,6 @@ test('allow a user to see results when board is only fractions long', () => {
 
     expect(getByTestId('cut-results')).toHaveTextContent('Board Length');
     expect(getByTestId('cut-results')).toHaveTextContent(`${boardLengthFr}"`);
-});
-
-test('should not show results table until a user provides cut details', () => {
-    const { queryByTestId } = render(<App />);
-
-    expect(queryByTestId('cut-results')).toBeNull();
 });
 
 const makeNumber = (min, max) => chance.natural({ min, max });
