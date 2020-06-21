@@ -3,16 +3,9 @@ import Form from 'react-bootstrap/Form';
 import Styles from '../../styles';
 import { MDBInput } from 'mdbreact';
 import { CutDetailsContext } from '../../contexts/cut-details-context';
-import { ViewContext } from '../../contexts/view-context';
-import { MDBBtn } from 'mdbreact';
 
 export const CutView = () => {
     const { cutDetails, setCutDetails } = React.useContext(CutDetailsContext);
-    const {setView} = React.useContext(ViewContext);
-    const handleBack = () => setView({
-        board: true,
-        cut: false
-    });
 
     const handleBladeChange = (event) => {
         setCutDetails({
@@ -32,9 +25,6 @@ export const CutView = () => {
                 label={'Blade width'}
                 onChange={handleBladeChange}
             />
-            <div className={'text-center'}>
-                <MDBBtn color='info' onClick={handleBack}>Back</MDBBtn>
-            </div>
         </Form>
     );
 }

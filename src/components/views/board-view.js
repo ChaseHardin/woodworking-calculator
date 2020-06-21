@@ -2,19 +2,11 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import { ItemSelector } from '../item-selector/item-selector';
 import { feet, inches, fractions } from '../../utils/measurements';
-import { MDBBtn } from 'mdbreact';
 import { CutDetailsContext } from '../../contexts/cut-details-context';
-import {ViewContext} from '../../contexts/view-context';
 import Styles from '../../styles';
 
 export const BoardView = () => {
     const { cutDetails } = React.useContext(CutDetailsContext);
-    const {setView} = React.useContext(ViewContext);
-
-    const handleNext = () => setView({
-        board: false,
-        cut: true
-    });
     
     return (
         <Form data-testid={'cut-details-form'}>
@@ -43,9 +35,6 @@ export const BoardView = () => {
                 options={fractions}
                 optionLabel={'Select fraction of an inch'}
             />
-            <div className={'text-center'}>
-                <MDBBtn onClick={handleNext}>Next</MDBBtn>
-            </div>
         </Form>
     )
 };
