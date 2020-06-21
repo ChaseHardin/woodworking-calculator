@@ -1,49 +1,20 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
 import './cut-details.css'
 import { CutDetailsContext } from '../../contexts/cut-details-context';
-import { ItemSelector } from '../item-selector/item-selector';
-import { feet, inches, fractions } from '../../utils/measurements';
+import {ViewContext} from '../../contexts/view-context';
 import { ResultsTable } from '../results/results-table';
+import { BoardLengthView } from '../views/board-length-view';
 
 export const CutDetails = () => {
     const { cutDetails } = React.useContext(CutDetailsContext);
+    const {view} = React.useContext(ViewContext);
 
-    const styleLabel = {
-        marginBottom: '2rem'
-    };
-    
     const showResults = cutDetails.board.ft || cutDetails.board.in || cutDetails.board.fr;
 
     return (
-        <Form data-testid={'cut-details-form'}>
-            <h4 style={styleLabel}>What is the length of the board?</h4>
-
-            <ItemSelector
-                measurement={'ft'}
-                type={'board'}
-                item={cutDetails.board}
-                options={feet}
-                optionLabel={'Select feet'}
-            />
-
-            <ItemSelector
-                measurement={'in'}
-                type={'board'}
-                item={cutDetails.board}
-                options={inches}
-                optionLabel={'Select inches'}
-            />
-
-            <ItemSelector
-                measurement={'fr'}
-                type={'board'}
-                item={cutDetails.board}
-                options={fractions}
-                optionLabel={'Select fraction of an inch'}
-            />
-
+        <div>
+            {view.board && <BoardLengthView />}
             {showResults && <ResultsTable cutDetails={cutDetails} />}
-        </Form>
+        </div>
     )
 };

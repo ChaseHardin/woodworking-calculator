@@ -5,9 +5,9 @@ import chance from '../../../test-utils/chance-wrapper';
 
 afterEach(cleanup);
 
-test('allows a user to enter cut details', async () => {
+test('should make form with correct text', () => {
     const { getByTestId, getByText } = render(<App />);
-
+    
     expect(getByTestId('cut-details-form')).toBeTruthy();
     expect(getByText('What is the length of the board?'));
     expect(getByText('ft'));
@@ -18,6 +18,10 @@ test('allows a user to enter cut details', async () => {
 
     expect(getByText('fr'));
     expect(getByText('Select fraction of an inch'))
+});
+
+test('allows a user to submit board length', async () => {
+    const { getByTestId, queryByTestId, getByText } = render(<App />);
 
     const boardLengthFt = makeNumber(0, 20);
     changeInput(getByTestId('selector-input-board-ft'), boardLengthFt);
@@ -32,6 +36,11 @@ test('allows a user to enter cut details', async () => {
     expect(getByTestId('cut-results')).toHaveTextContent(
         `${boardLengthFt}' ${boardLengthIn} 1/2"`
     );
+    
+    fireEvent.click(getByText('Next'));
+
+    expect(queryByTestId('cut-details-form')).toBeNull();
+    expect(queryByTestId('cut-results')).toBeTruthy();
 });
 
 test('allow a user to see results when board is only feet long', () => {
