@@ -8,12 +8,11 @@ import { CutView } from '../views/cut-view';
 import { MDBBtn } from 'mdbreact';
 
 const styleFooter = {
-    position: 'fixed',
     left: 0,
     bottom: 0,
     width: '100%',
     textAlign: 'center',
-    marginBottom: '4rem'
+    marginBottom: '1rem'
 };
 
 export const CutDetails = () => {
