@@ -7,14 +7,6 @@ import { BoardView } from '../views/board-view';
 import { CutView } from '../views/cut-view';
 import { MDBBtn } from 'mdbreact';
 
-const styleFooter = {
-    left: 0,
-    bottom: 0,
-    width: '100%',
-    textAlign: 'center',
-    marginBottom: '1rem'
-};
-
 export const CutDetails = () => {
     const { cutDetails } = React.useContext(CutDetailsContext);
     const { view, setView } = React.useContext(ViewContext);
@@ -35,7 +27,7 @@ export const CutDetails = () => {
             {view.board && <BoardView />}
             {view.cut && <CutView />}
             {showResults && <ResultsTable cutDetails={cutDetails} />}
-            <div style={styleFooter}>
+            <div style={{textAlign: 'center'}}>
                 {view.cut && <MDBBtn color='info' onClick={handleBack}>Back</MDBBtn>}
                 <MDBBtn onClick={handleNext}>Next</MDBBtn>
             </div>
